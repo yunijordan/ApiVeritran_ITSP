@@ -21,6 +21,13 @@ public class deviceinformation {
 	private String tokenProtectionMethod;
 	
 	
+	public deviceinformation(String deviceID, String deviceLanguageCode) {
+		super();
+		this.deviceID = deviceID;
+		this.deviceLanguageCode = deviceLanguageCode;
+	}
+
+
 	public deviceinformation(String deviceID, String deviceLanguageCode, String deviceType, String deviceName,
 			String deviceNumber, String osType, String osVersion, String osBuildID, String deviceIDType,
 			String deviceManufacturer, String deviceBrand, String deviceModel, String deviceLocation,

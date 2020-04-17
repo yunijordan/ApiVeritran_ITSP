@@ -31,7 +31,10 @@ public class applicationInfo {
 		this.associatedApplicationIdentifiers = associatedApplicationIdentifiers;
 	}
 
-
+	public applicationInfo(Boolean supportsTokenNotifications){
+		this.supportsTokenNotifications = supportsTokenNotifications;
+	}
+	
 	public Boolean getSupportsTokenNotifications() {
 		return supportsTokenNotifications;
 	}

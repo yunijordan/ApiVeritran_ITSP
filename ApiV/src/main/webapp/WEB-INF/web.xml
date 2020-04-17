@@ -5,19 +5,19 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
-        <servlet-name>JavaApi</servlet-name>
-        <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
-        <init-param>
-         <param-name>com.sun.jersey.config.property.packages</param-name>
-         <param-value>com.vetitran.api.rest</param-value>
-        </init-param>
-        <init-param>
-         <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
-         <param-value>true</param-value>
-        </init-param>
+    <servlet-name>VeritranITSP</servlet-name>
+     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+     <init-param>
+      <param-name>com.sun.jersey.config.property.packages</param-name>
+      <param-value>com.veritran.api.rest</param-value>
+     </init-param>
+     <init-param>
+      <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+      <param-value>true</param-value>
+     </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>JavaApi</servlet-name>
+        <servlet-name>VeritranITSP</servlet-name>
         <url-pattern>/services/*</url-pattern>
     </servlet-mapping>
 </web-app>
