@@ -22,14 +22,25 @@ public class ServiceEndPoints {
 	public checkEligibilityResponse checkEligibility (checkEligibilityRequest item )
 	
 	{
+		String cardArtRefID[] = {"ak0o23h6lu921rnturkutruj8h70q1jk",
+		         "bk0o23h6lu921rnturkutruj8h70q1jk",
+		         "ck0o23h6lu921rnturkutruj8h70q1jk",
+		         "k04o23h6lu921rnturkutruj8h70q1jk"};
+		
+		cardArtData cardArtData = new cardArtData(cardArtRefID);
+		
+		
 		checkEligibilityResponse response = new checkEligibilityResponse();
 		response.setErrorCode("Estamos del otro lado");
+		
 		cardmetadatainformation cardMetadataInfo = new cardmetadatainformation(item.getTokenReferenceID(), item.getTokenRequestorID().toString(),
 								item.getPanReferenceID(), "labelColor", "shortDescription", "longDescription", "profileID", "termsAndConditionsID",
-								"privacyPolicyURL", "termsAndConditionsURL");
+								"privacyPolicyURL", "termsAndConditionsURL", cardArtData);
+		
 		response.setCardMetadataInfo(cardMetadataInfo);
 		applicationInfo applicationInfo = new applicationInfo(true);
 		response.setApplicationInfo(applicationInfo);
+		
 		return response;
 	}
 }

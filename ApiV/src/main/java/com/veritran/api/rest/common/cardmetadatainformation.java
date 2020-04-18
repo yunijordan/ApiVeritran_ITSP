@@ -10,7 +10,7 @@ public class cardmetadatainformation {
 	private String longDescription;
 	private String profileID;
 	private String termsAndConditionsID;
-	/*cardArtData array*/
+	private cardArtData cardArtData;
 	private String privacyPolicyURL;
 	private String termsAndConditionsURL;
 	/*contactInfo contactI;*/
@@ -19,7 +19,7 @@ public class cardmetadatainformation {
 	
 	public cardmetadatainformation(String cardIssuer, String foregroundColor, String backgroundColor, String labelColor,
 			String shortDescription, String longDescription, String profileID, String termsAndConditionsID,
-			String privacyPolicyURL, String termsAndConditionsURL) {
+			String privacyPolicyURL, String termsAndConditionsURL, cardArtData cardArtData) {
 		super();
 		this.cardIssuer = cardIssuer;
 		this.foregroundColor = foregroundColor;
@@ -31,6 +31,17 @@ public class cardmetadatainformation {
 		this.termsAndConditionsID = termsAndConditionsID;
 		this.privacyPolicyURL = privacyPolicyURL;
 		this.termsAndConditionsURL = termsAndConditionsURL;
+		this.cardArtData = cardArtData;
+	}
+
+
+	public cardArtData getCardArtData() {
+		return cardArtData;
+	}
+
+
+	public void setCardArtData(cardArtData cardArtData) {
+		this.cardArtData = cardArtData;
 	}
 
 
