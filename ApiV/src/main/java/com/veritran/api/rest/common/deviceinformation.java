@@ -51,6 +51,10 @@ public class deviceinformation {
 		this.locationSource = locationSource;
 		this.tokenProtectionMethod = tokenProtectionMethod;
 	}
+	
+	public deviceinformation () {
+		
+	}
 
 
 	public String getDeviceID() {

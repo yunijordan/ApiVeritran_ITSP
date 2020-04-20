@@ -31,9 +31,6 @@ public class discretionarydatainformation {
 
 	public void setIssuerApplicationDiscretionaryData(String issuerApplicationDiscretionaryData) {
 		this.issuerApplicationDiscretionaryData = issuerApplicationDiscretionaryData;
-	}
-	
-	
-	
+	}	
 
 }

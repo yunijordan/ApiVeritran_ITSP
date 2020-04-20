@@ -19,29 +19,30 @@ public class tokeninformation {
 	private String originalTokenAssuranceLevel;
 	
 	
-	public tokeninformation(String token, String tokenType, String tokenStatus, String tokenAssuranceLevel,
-			Integer numberOfActiveTokensForPAN, Integer numberOfInactiveTokensForPAN,
-			Integer numberOfSuspendedTokensForPAN, String tokenActivationDate, String tokenDeactivationDate,
-			String lastTokenStatusUpdatedTime, String originalToken, Integer originalTokenRequestorID,
-			String originalTokenReferenceID, String originalTokenAssuranceLevel) {
-		super();
-		this.token = token;
-		this.tokenType = tokenType;
-		this.tokenStatus = tokenStatus;
-		this.tokenAssuranceLevel = tokenAssuranceLevel;
-		this.numberOfActiveTokensForPAN = numberOfActiveTokensForPAN;
-		this.numberOfInactiveTokensForPAN = numberOfInactiveTokensForPAN;
-		this.numberOfSuspendedTokensForPAN = numberOfSuspendedTokensForPAN;
-		this.tokenActivationDate = tokenActivationDate;
-		this.tokenDeactivationDate = tokenDeactivationDate;
-		this.lastTokenStatusUpdatedTime = lastTokenStatusUpdatedTime;
-		this.originalToken = originalToken;
-		this.originalTokenRequestorID = originalTokenRequestorID;
-		this.originalTokenReferenceID = originalTokenReferenceID;
-		this.originalTokenAssuranceLevel = originalTokenAssuranceLevel;
-	}
+//	public tokeninformation(String token, String tokenType, String tokenStatus, String tokenAssuranceLevel,
+//			Integer numberOfActiveTokensForPAN, Integer numberOfInactiveTokensForPAN,
+//			Integer numberOfSuspendedTokensForPAN, String tokenActivationDate, String tokenDeactivationDate,
+//			String lastTokenStatusUpdatedTime, String originalToken, Integer originalTokenRequestorID,
+//			String originalTokenReferenceID, String originalTokenAssuranceLevel) {
+//		super();
+//		this.token = token;
+//		this.tokenType = tokenType;
+//		this.tokenStatus = tokenStatus;
+//		this.tokenAssuranceLevel = tokenAssuranceLevel;
+//		this.numberOfActiveTokensForPAN = numberOfActiveTokensForPAN;
+//		this.numberOfInactiveTokensForPAN = numberOfInactiveTokensForPAN;
+//		this.numberOfSuspendedTokensForPAN = numberOfSuspendedTokensForPAN;
+//		this.tokenActivationDate = tokenActivationDate;
+//		this.tokenDeactivationDate = tokenDeactivationDate;
+//		this.lastTokenStatusUpdatedTime = lastTokenStatusUpdatedTime;
+//		this.originalToken = originalToken;
+//		this.originalTokenRequestorID = originalTokenRequestorID;
+//		this.originalTokenReferenceID = originalTokenReferenceID;
+//		this.originalTokenAssuranceLevel = originalTokenAssuranceLevel;
+//	}
 
-
+	public tokeninformation() {}
+	
 	public String getToken() {
 		return token;
 	}
