@@ -13,26 +13,8 @@ public class cardmetadatainformation {
 	private cardArtData cardArtData;
 	private String privacyPolicyURL;
 	private String termsAndConditionsURL;
-	/*contactInfo contactI;*/
-	/*applicationInfo appInf;*/
-	
-	
-	public cardmetadatainformation(String cardIssuer, String foregroundColor, String backgroundColor, String labelColor,
-			String shortDescription, String longDescription, String profileID, String termsAndConditionsID,
-			String privacyPolicyURL, String termsAndConditionsURL, cardArtData cardArtData) {
-		super();
-		this.cardIssuer = cardIssuer;
-		this.foregroundColor = foregroundColor;
-		this.backgroundColor = backgroundColor;
-		this.labelColor = labelColor;
-		this.shortDescription = shortDescription;
-		this.longDescription = longDescription;
-		this.profileID = profileID;
-		this.termsAndConditionsID = termsAndConditionsID;
-		this.privacyPolicyURL = privacyPolicyURL;
-		this.termsAndConditionsURL = termsAndConditionsURL;
-		this.cardArtData = cardArtData;
-	}
+	/*private contactInfo contactInfo;
+	private applicationInfo applicationInfo;*/
 
 	public cardmetadatainformation() {}
 
@@ -40,36 +22,28 @@ public class cardmetadatainformation {
 		return cardArtData;
 	}
 
-
 	public void setCardArtData(cardArtData cardArtData) {
 		this.cardArtData = cardArtData;
 	}
-
-
-	public String getCardIssuer() {
+		public String getCardIssuer() {
 		return cardIssuer;
 	}
-
 
 	public void setCardIssuer(String cardIssuer) {
 		this.cardIssuer = cardIssuer;
 	}
 
-
 	public String getForegroundColor() {
 		return foregroundColor;
 	}
-
 
 	public void setForegroundColor(String foregroundColor) {
 		this.foregroundColor = foregroundColor;
 	}
 
-
 	public String getBackgroundColor() {
 		return backgroundColor;
 	}
-
 
 	public void setBackgroundColor(String backgroundColor) {
 		this.backgroundColor = backgroundColor;
@@ -144,8 +118,5 @@ public class cardmetadatainformation {
 	public void setTermsAndConditionsURL(String termsAndConditionsURL) {
 		this.termsAndConditionsURL = termsAndConditionsURL;
 	}
-	
-	
-
 
 }

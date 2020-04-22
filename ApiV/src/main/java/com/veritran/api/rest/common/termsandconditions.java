@@ -11,6 +11,10 @@ public class termsandconditions {
 		this.id = id;
 		this.date = date;
 	}
+	
+	public termsandconditions() {
+	
+	}
 
 
 	public String getId() {

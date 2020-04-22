@@ -2,6 +2,7 @@ package com.veritran.api.rest.inboundRequest;
 
 import com.veritran.api.rest.common.deviceinformation;
 import com.veritran.api.rest.common.tokeninformation;
+
 public class approveProvisioningRequest {
 // private int tokenRequestorID;
 // private String tokenReferenceID;
@@ -123,7 +124,5 @@ public String getEncryptedData() {
 public void setEncryptedData(String encryptedData) {
 	this.encryptedData = encryptedData;
 }
-
-
 
 }

@@ -30,7 +30,6 @@ public class approveProvisioningResponse {
 		return actionCode;
 	}
 
-
 	public void setActionCode(String actionCode) {
 		this.actionCode = actionCode;
 	}
@@ -39,7 +38,6 @@ public class approveProvisioningResponse {
 	public String getErrorCode() {
 		return errorCode;
 	}
-
 
 	public void setErrorCode(String errorCode) {
 		this.errorCode = errorCode;
@@ -50,16 +48,13 @@ public class approveProvisioningResponse {
 		return addressVerificationResultCode;
 	}
 
-
 	public void setAddressVerificationResultCode(String addressVerificationResultCode) {
 		this.addressVerificationResultCode = addressVerificationResultCode;
 	}
 
-
 	public String getCvv2ResultsCode() {
 		return cvv2ResultsCode;
 	}
-
 
 	public void setCvv2ResultsCode(String cvv2ResultsCode) {
 		this.cvv2ResultsCode = cvv2ResultsCode;
@@ -78,9 +73,7 @@ public class approveProvisioningResponse {
 		return issuerDiscretionaryData;
 	}
 
-
 	public void setIssuerDiscretionaryData(discretionarydatainformation issuerDiscretionaryData) {
 		this.issuerDiscretionaryData = issuerDiscretionaryData;
 	}
-
 }

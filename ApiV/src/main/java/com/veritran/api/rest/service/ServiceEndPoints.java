@@ -3,8 +3,11 @@ package com.veritran.api.rest.service;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import com.veritran.api.rest.common.applicationInfo;
 import com.veritran.api.rest.common.cardArtData;
@@ -14,13 +17,18 @@ import com.veritran.api.rest.common.checkEligibilityResponse;
 import com.veritran.api.rest.common.discretionarydatainformation;
 import com.veritran.api.rest.inboundRequest.approveProvisioningRequest;
 import com.veritran.api.rest.inboundResponse.approveProvisioningResponse;
+import com.veritran.api.rest.inboundRequest.tokenNotificationRequest;
+import com.veritran.api.rest.inboundRequest.approveProvisioningStandInRequest;
+import com.veritran.api.rest.inboundRequest.sendPasscodeRequest;
+import com.veritran.api.rest.inboundRequest.tokenCreateNotificationRequest;
 
 
 @Path("/vtis/v1")
 public class ServiceEndPoints {
 	
-	private int tokenRequestorID;
+	private Integer tokenRequestorID;
 	private String tokenReferenceID;
+	private String eventType;//Todo enum
 	
 	@POST
 	@Path("/checkEligibility")
@@ -37,7 +45,6 @@ public class ServiceEndPoints {
 					};
 
 		cardArtData cardArtData = new cardArtData(cardArtRefID);
-		
 		
 		checkEligibilityResponse response = new checkEligibilityResponse();
 		
@@ -60,40 +67,60 @@ public class ServiceEndPoints {
 	@Path("/tokenRequestors/{tokenRequestorID}/tokens/{tokenReferenceID}/approveProvisioning")
 	@Consumes({MediaType.APPLICATION_JSON})
 	@Produces({MediaType.APPLICATION_JSON})
-	public approveProvisioningResponse approveProvisioning(approveProvisioningRequest request)
+	public approveProvisioningResponse approveProvisioning(approveProvisioningRequest request, @PathParam("tokenRequestorID") Integer tokenRequestorID, @PathParam("tokenReferenceID") String tokenReferenceID)
 	{
 		discretionarydatainformation issuerDiscretionaryData = 
 				new discretionarydatainformation("fileControlInformation", "issuerApplicationDiscretionaryData");
 		
 		approveProvisioningResponse response = new approveProvisioningResponse(
 				"00", null, "1", "M", "issuerSpecialConditionCodes", issuerDiscretionaryData);
-		
+    
 		return response;
 	}
 	
 	@POST
-	@Path("/retrieveStepUpMethods")
+	@Path("/tokenRequestors/{tokenRequestorID}/tokens/{tokenReferenceID}/tokenChanged")
 	@Consumes({MediaType.APPLICATION_JSON})
 	@Produces({MediaType.APPLICATION_JSON})
-	public approveProvisioningResponse getCardholderVerificationMethods(approveProvisioningRequest request)
-	{
-		discretionarydatainformation issuerDiscretionaryData = 
-				new discretionarydatainformation("fileControlInformation", "issuerApplicationDiscretionaryData");
+	public Response ApproveProvisioningSIN (approveProvisioningStandInRequest request,  @PathParam("tokenRequestorID") Integer tokenRequestorID,@PathParam("tokenReferenceID") String tokenReferenceID , @QueryParam("eventType") String eventType)  {
 		
-		approveProvisioningResponse response = new approveProvisioningResponse(
-				"00", null, "1", "M", "issuerSpecialConditionCodes", issuerDiscretionaryData);
+		String json = " HTTP 200 OK";
+			    return Response.ok(json, MediaType.APPLICATION_JSON).build();
+	
+	}
+	
+	@POST
+	@Path("/tokenRequestors/{tokenRequestorID}/tokens/{tokenReferenceID}/tokentest")
+	@Consumes({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response tokenCreateNotification (tokenCreateNotificationRequest request,  @PathParam("tokenRequestorID") Integer tokenRequestorID,@PathParam("tokenReferenceID")
+	String tokenReferenceID , @QueryParam("eventType") String eventType)  {
 		
-		return response;
+		String json1 = " HTTP 200 OK";
+			    return Response.ok(json1, MediaType.APPLICATION_JSON).build();
 	}
 
-	public int getTokenRequestorID() {
-		return tokenRequestorID;
+	@POST
+	@Path("/tokenRequestors/{tokenRequestorID}/tokens/{tokenReferenceID}/tokenotification")
+	@Consumes({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response tokenNotification (tokenNotificationRequest request,  @PathParam("tokenRequestorID") Integer tokenRequestorID,@PathParam("tokenReferenceID")
+	String tokenReferenceID , @QueryParam("eventType") String eventType)  {
+		
+		String json1 = " HTTP 200 OK";
+			    return Response.ok(json1, MediaType.APPLICATION_JSON).build();
 	}
 
-	public void setTokenRequestorID(int tokenRequestorID) {
-		this.tokenRequestorID = tokenRequestorID;
+	@POST
+	@Path("/sendPasscode")
+	@Consumes({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response sendPasscode (sendPasscodeRequest request)  {
+		
+		String json1 = " HTTP 200 OK";
+			    return Response.ok(json1, MediaType.APPLICATION_JSON).build();
 	}
-
+	
 	public String getTokenReferenceID() {
 		return tokenReferenceID;
 	}
@@ -101,5 +128,18 @@ public class ServiceEndPoints {
 	public void setTokenReferenceID(String tokenReferenceID) {
 		this.tokenReferenceID = tokenReferenceID;
 	}
+
+	public String getEventType() {
+		return eventType;
+	}
+
+	public void setEventType(String eventType) {
+		this.eventType = eventType;
+	}
+
+	public void setTokenRequestorID(Integer tokenRequestorID) {
+		this.tokenRequestorID = tokenRequestorID;
+	}
+
 }
 
