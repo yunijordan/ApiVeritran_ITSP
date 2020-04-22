@@ -18,6 +18,10 @@ public class tokeninformation {
 	private String originalTokenReferenceID;
 	private String originalTokenAssuranceLevel;
 	
+	public tokeninformation() {
+	
+	}
+	
 	
 	public tokeninformation(String token, String tokenType, String tokenStatus, String tokenAssuranceLevel,
 			Integer numberOfActiveTokensForPAN, Integer numberOfInactiveTokensForPAN,

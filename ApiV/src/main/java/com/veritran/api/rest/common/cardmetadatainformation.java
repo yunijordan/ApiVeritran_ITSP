@@ -13,32 +13,19 @@ public class cardmetadatainformation {
 	/*cardArtData array*/
 	private String privacyPolicyURL;
 	private String termsAndConditionsURL;
-	/*contactInfo contactI;*/
-	/*applicationInfo appInf;*/
+	/*private contactInfo contactInfo;
+	private applicationInfo applicationInfo;*/
 	
 	
-	public cardmetadatainformation(String cardIssuer, String foregroundColor, String backgroundColor, String labelColor,
-			String shortDescription, String longDescription, String profileID, String termsAndConditionsID,
-			String privacyPolicyURL, String termsAndConditionsURL) {
-		super();
-		this.cardIssuer = cardIssuer;
-		this.foregroundColor = foregroundColor;
-		this.backgroundColor = backgroundColor;
-		this.labelColor = labelColor;
-		this.shortDescription = shortDescription;
-		this.longDescription = longDescription;
-		this.profileID = profileID;
-		this.termsAndConditionsID = termsAndConditionsID;
-		this.privacyPolicyURL = privacyPolicyURL;
-		this.termsAndConditionsURL = termsAndConditionsURL;
-	}
 
 
-	public String getCardIssuer() {
+
+		public String getCardIssuer() {
 		return cardIssuer;
 	}
 
 
+	
 	public void setCardIssuer(String cardIssuer) {
 		this.cardIssuer = cardIssuer;
 	}
@@ -132,6 +119,33 @@ public class cardmetadatainformation {
 	public void setTermsAndConditionsURL(String termsAndConditionsURL) {
 		this.termsAndConditionsURL = termsAndConditionsURL;
 	}
+	
+
+
+
+
+
+
+
+
+
+	public cardmetadatainformation(String cardIssuer, String foregroundColor, String backgroundColor, String labelColor,
+			String shortDescription, String longDescription, String profileID, String termsAndConditionsID,
+			String privacyPolicyURL, String termsAndConditionsURL) {
+		super();
+		this.cardIssuer = cardIssuer;
+		this.foregroundColor = foregroundColor;
+		this.backgroundColor = backgroundColor;
+		this.labelColor = labelColor;
+		this.shortDescription = shortDescription;
+		this.longDescription = longDescription;
+		this.profileID = profileID;
+		this.termsAndConditionsID = termsAndConditionsID;
+		this.privacyPolicyURL = privacyPolicyURL;
+		this.termsAndConditionsURL = termsAndConditionsURL;
+		
+	}
+
 	
 	
 

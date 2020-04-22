@@ -27,7 +27,11 @@ public class deviceinformation {
 		this.deviceLanguageCode = deviceLanguageCode;
 	}
 
-
+     public deviceinformation()
+     {
+    	 
+    	 
+     }
 	public deviceinformation(String deviceID, String deviceLanguageCode, String deviceType, String deviceName,
 			String deviceNumber, String osType, String osVersion, String osBuildID, String deviceIDType,
 			String deviceManufacturer, String deviceBrand, String deviceModel, String deviceLocation,
@@ -193,12 +197,12 @@ public class deviceinformation {
 	}
 
 
-	public String getDeviceIPAddressV4() {
+	public String getdeviceIPAddressV4() {
 		return deviceIPAddressV4;
 	}
 
 
-	public void setDeviceIPAddressV4(String deviceIPAddressV4) {
+	public void setdeviceIPAddressV4(String deviceIPAddressV4) {
 		this.deviceIPAddressV4 = deviceIPAddressV4;
 	}
 
