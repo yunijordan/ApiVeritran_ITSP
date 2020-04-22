@@ -12,6 +12,10 @@ public class discretionarydatainformation {
 		this.fileControlInformation = fileControlInformation;
 		this.issuerApplicationDiscretionaryData = issuerApplicationDiscretionaryData;
 	}
+	
+	public discretionarydatainformation() {
+		super();
+	}
 
 
 	public String getFileControlInformation() {

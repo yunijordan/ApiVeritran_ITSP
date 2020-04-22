@@ -53,6 +53,7 @@ public class deviceinformation {
 	}
 	
 	public deviceinformation () {
+		super();
 		
 	}
 

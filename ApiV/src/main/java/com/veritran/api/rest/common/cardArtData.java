@@ -7,6 +7,11 @@ public class cardArtData {
 		super();
 		this.cardArtRefID = cardArtRefID;
 	}
+	
+	public cardArtData() {
+		super();
+		this.cardArtRefID = cardArtRefID;
+	}
 
 	public String[] getCardArtRefID() {
 		return cardArtRefID;

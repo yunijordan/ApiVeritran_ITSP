@@ -9,8 +9,9 @@ public class checkEligibilityRequest {
 	private String lifeCycleTraceID;
 	private String encryptedData;
 	
-	///private Enumeration panSource;
-	//private deviceinformation deviceInfo= new deviceinformation(deviceID, deviceLanguageCode);
+	public checkEligibilityRequest() {
+		super();
+	}
 	
 	public Integer getTokenRequestorID() {
 		return tokenRequestorID;

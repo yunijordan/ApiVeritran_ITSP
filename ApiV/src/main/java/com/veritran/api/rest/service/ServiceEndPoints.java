@@ -1,20 +1,20 @@
 package com.veritran.api.rest.service;
 
-import java.io.Console;
-
 import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
-import com.sun.jersey.core.spi.factory.MessageBodyFactory;
-import com.veritran.api.rest.common.*;
+import com.veritran.api.rest.common.applicationInfo;
+import com.veritran.api.rest.common.cardArtData;
+import com.veritran.api.rest.common.cardmetadatainformation;
+import com.veritran.api.rest.common.checkEligibilityRequest;
+import com.veritran.api.rest.common.checkEligibilityResponse;
+import com.veritran.api.rest.common.discretionarydatainformation;
 import com.veritran.api.rest.inboundRequest.approveProvisioningRequest;
 import com.veritran.api.rest.inboundResponse.approveProvisioningResponse;
+
 
 @Path("/vtis/v1")
 public class ServiceEndPoints {
@@ -27,9 +27,7 @@ public class ServiceEndPoints {
 
 	@Consumes({MediaType.APPLICATION_JSON})
 	@Produces({MediaType.APPLICATION_JSON})
-	
 	public checkEligibilityResponse checkEligibility (checkEligibilityRequest request)
-	
 	{
 		String cardArtRefID[] = {
 						"ak0o23h6lu921rnturkutruj8h70q1jk",
@@ -59,11 +57,25 @@ public class ServiceEndPoints {
 	}
 	
 	@POST
-//	@Path("/tokenRequestors/{tokenRequestorID}/tokens/{tokenReferenceID}/approveProvisioning")
-	@Path("/tokenRequestors")
+	@Path("/tokenRequestors/{tokenRequestorID}/tokens/{tokenReferenceID}/approveProvisioning")
 	@Consumes({MediaType.APPLICATION_JSON})
 	@Produces({MediaType.APPLICATION_JSON})
 	public approveProvisioningResponse approveProvisioning(approveProvisioningRequest request)
+	{
+		discretionarydatainformation issuerDiscretionaryData = 
+				new discretionarydatainformation("fileControlInformation", "issuerApplicationDiscretionaryData");
+		
+		approveProvisioningResponse response = new approveProvisioningResponse(
+				"00", null, "1", "M", "issuerSpecialConditionCodes", issuerDiscretionaryData);
+		
+		return response;
+	}
+	
+	@POST
+	@Path("/retrieveStepUpMethods")
+	@Consumes({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.APPLICATION_JSON})
+	public approveProvisioningResponse getCardholderVerificationMethods(approveProvisioningRequest request)
 	{
 		discretionarydatainformation issuerDiscretionaryData = 
 				new discretionarydatainformation("fileControlInformation", "issuerApplicationDiscretionaryData");

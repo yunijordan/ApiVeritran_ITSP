@@ -11,6 +11,10 @@ public class tokenuserinformation {
 		this.tokenUserID = tokenUserID;
 		this.tokenUserAppType = tokenUserAppType;
 	}
+	
+	public tokenuserinformation() {
+		super();
+	}
 
 
 	public Integer getTokenUserID() {

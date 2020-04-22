@@ -34,6 +34,7 @@ public class cardmetadatainformation {
 		this.cardArtData = cardArtData;
 	}
 
+	public cardmetadatainformation() {}
 
 	public cardArtData getCardArtData() {
 		return cardArtData;

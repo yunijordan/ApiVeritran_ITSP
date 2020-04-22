@@ -23,6 +23,8 @@ public class approveProvisioningResponse {
 		this.issuerSpecialConditionCodes = issuerSpecialConditionCodes;
 		this.issuerDiscretionaryData = issuerDiscretionaryData;
 	}
+	
+	public approveProvisioningResponse() {}
 
 	public String getActionCode() {
 		return actionCode;
