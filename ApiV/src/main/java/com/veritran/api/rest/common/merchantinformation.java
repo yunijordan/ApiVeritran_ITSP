@@ -11,6 +11,10 @@ public class merchantinformation {
 		this.merchantID = merchantID;
 		this.merchantName = merchantName;
 	}
+	
+	public merchantinformation() {
+		super();
+	}
 
 
 	public Integer getMerchantID() {
