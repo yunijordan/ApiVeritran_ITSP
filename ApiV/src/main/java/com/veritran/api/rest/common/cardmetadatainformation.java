@@ -15,8 +15,26 @@ public class cardmetadatainformation {
 	private String termsAndConditionsURL;
 	/*private contactInfo contactInfo;
 	private applicationInfo applicationInfo;*/
-
+	
 	public cardmetadatainformation() {}
+
+	public cardmetadatainformation(String cardIssuer, String foregroundColor, String backgroundColor, String labelColor,
+			String shortDescription, String longDescription, String profileID, String termsAndConditionsID,
+			com.veritran.api.rest.common.cardArtData cardArtData, String privacyPolicyURL,
+			String termsAndConditionsURL) {
+		super();
+		this.cardIssuer = cardIssuer;
+		this.foregroundColor = foregroundColor;
+		this.backgroundColor = backgroundColor;
+		this.labelColor = labelColor;
+		this.shortDescription = shortDescription;
+		this.longDescription = longDescription;
+		this.profileID = profileID;
+		this.termsAndConditionsID = termsAndConditionsID;
+		this.cardArtData = cardArtData;
+		this.privacyPolicyURL = privacyPolicyURL;
+		this.termsAndConditionsURL = termsAndConditionsURL;
+	}
 
 	public cardArtData getCardArtData() {
 		return cardArtData;

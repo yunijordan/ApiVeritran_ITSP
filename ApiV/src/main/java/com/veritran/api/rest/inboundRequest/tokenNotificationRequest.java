@@ -22,7 +22,9 @@ public class tokenNotificationRequest {
 	 private String deviceBindingResult;//enum
 	 private String trustedListingResult;//enum
 	 
+	 public tokenNotificationRequest() {
 	 
+	 }
 	 
 	public String getMessageReason() {
 		return messageReason;

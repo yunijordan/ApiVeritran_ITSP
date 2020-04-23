@@ -1,5 +1,7 @@
 package com.veritran.api.rest.service;
 
+import java.io.Console;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -9,19 +11,13 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.veritran.api.rest.common.applicationInfo;
-import com.veritran.api.rest.common.cardArtData;
-import com.veritran.api.rest.common.cardmetadatainformation;
-import com.veritran.api.rest.common.checkEligibilityRequest;
-import com.veritran.api.rest.common.checkEligibilityResponse;
-import com.veritran.api.rest.common.discretionarydatainformation;
+import com.veritran.api.rest.common.*;
 import com.veritran.api.rest.inboundRequest.approveProvisioningRequest;
-import com.veritran.api.rest.inboundResponse.approveProvisioningResponse;
-import com.veritran.api.rest.inboundRequest.tokenNotificationRequest;
 import com.veritran.api.rest.inboundRequest.approveProvisioningStandInRequest;
 import com.veritran.api.rest.inboundRequest.sendPasscodeRequest;
 import com.veritran.api.rest.inboundRequest.tokenCreateNotificationRequest;
-
+import com.veritran.api.rest.inboundRequest.tokenNotificationRequest;
+import com.veritran.api.rest.inboundResponse.approveProvisioningResponse;
 
 @Path("/vtis/v1")
 public class ServiceEndPoints {
@@ -50,9 +46,12 @@ public class ServiceEndPoints {
 		
 		response.setErrorCode("Estamos del otro lado");
 		
-		cardmetadatainformation cardMetadataInfo = new cardmetadatainformation(request.getTokenReferenceID(), request.getTokenRequestorID().toString(),
+		/*cardmetadatainformation cardMetadataInfo = new cardmetadatainformation(request.getTokenReferenceID(), request.getTokenRequestorID().toString(),
 								request.getPanReferenceID(), "labelColor", "shortDescription", "longDescription", "profileID", "termsAndConditionsID",
-								"privacyPolicyURL", "termsAndConditionsURL", cardArtData);
+								"privacyPolicyURL", "termsAndConditionsURL");*/
+		
+		cardmetadatainformation cardMetadataInfo = new cardmetadatainformation("cardIssuer", "foregroundColor", "backgroundColor", "labelColor", "shortDescription", "longDescription",
+				"profileID", "termsAndConditionsID", cardArtData, "privacyPolicyURL", "termsAndConditionsURL");
 		
 		response.setCardMetadataInfo(cardMetadataInfo);
 		
@@ -82,7 +81,8 @@ public class ServiceEndPoints {
 	@Path("/tokenRequestors/{tokenRequestorID}/tokens/{tokenReferenceID}/tokenChanged")
 	@Consumes({MediaType.APPLICATION_JSON})
 	@Produces({MediaType.APPLICATION_JSON})
-	public Response ApproveProvisioningSIN (approveProvisioningStandInRequest request,  @PathParam("tokenRequestorID") Integer tokenRequestorID,@PathParam("tokenReferenceID") String tokenReferenceID , @QueryParam("eventType") String eventType)  {
+	public Response ApproveProvisioningSIN (approveProvisioningStandInRequest request,  @PathParam("tokenRequestorID") Integer tokenRequestorID,@PathParam("tokenReferenceID") String tokenReferenceID 
+			, @QueryParam("eventType") String eventType)  {
 		
 		String json = " HTTP 200 OK";
 			    return Response.ok(json, MediaType.APPLICATION_JSON).build();
@@ -90,15 +90,16 @@ public class ServiceEndPoints {
 	}
 	
 	@POST
-	@Path("/tokenRequestors/{tokenRequestorID}/tokens/{tokenReferenceID}/tokentest")
+	@Path("/tokenRequestors/{tokenRequestorID}/tokens/{tokenReferenceID}/tokentest1")
 	@Consumes({MediaType.APPLICATION_JSON})
 	@Produces({MediaType.APPLICATION_JSON})
-	public Response tokenCreateNotification (tokenCreateNotificationRequest request,  @PathParam("tokenRequestorID") Integer tokenRequestorID,@PathParam("tokenReferenceID")
-	String tokenReferenceID , @QueryParam("eventType") String eventType)  {
+	public Response tokenCreateNotification ( tokenCreateNotificationRequest request, @PathParam("tokenRequestorID") String tokenRequestorID,  @PathParam("tokenReferenceID") String tokenReferenceID, @QueryParam("eventType") String eventType)  {
+			
 		
 		String json1 = " HTTP 200 OK";
 			    return Response.ok(json1, MediaType.APPLICATION_JSON).build();
 	}
+
 
 	@POST
 	@Path("/tokenRequestors/{tokenRequestorID}/tokens/{tokenReferenceID}/tokenotification")
@@ -121,10 +122,7 @@ public class ServiceEndPoints {
 			    return Response.ok(json1, MediaType.APPLICATION_JSON).build();
 	}
 	
-	public String getTokenReferenceID() {
-		return tokenReferenceID;
-	}
-
+	
 	public void setTokenReferenceID(String tokenReferenceID) {
 		this.tokenReferenceID = tokenReferenceID;
 	}

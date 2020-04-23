@@ -1,6 +1,5 @@
 package com.veritran.api.rest.inboundRequest;
 
-import javax.print.attribute.DateTimeSyntax;
 
 import com.veritran.api.rest.common.deviceinformation;
 import com.veritran.api.rest.common.termsandconditions;
@@ -26,11 +25,11 @@ public class tokenCreateNotificationRequest {
 	 
 	 
 	 
+	 public tokenCreateNotificationRequest() {
+		 super();
+	 }
+	 
 
-	
-	public tokenCreateNotificationRequest() {
-		
-	}
 	public String getMessageReason() {
 		return messageReason;
 	}

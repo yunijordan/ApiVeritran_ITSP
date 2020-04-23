@@ -1,7 +1,5 @@
 package com.veritran.api.rest.inboundRequest;
 
-import javax.print.attribute.DateTimeSyntax;
-
 import com.veritran.api.rest.common.deviceinformation;
 
 public class approveProvisioningStandInRequest {
@@ -19,10 +17,12 @@ public class approveProvisioningStandInRequest {
 	 private String encryptedData;//Todo: See JWS encryption
 	 private String actionCode;
 	 private String stipReasonCode;
-	 private DateTimeSyntax dateTimeOfEvent;
+	 //private DateTimeSyntax dateTimeOfEvent;
 	 
 	 
-	 
+	 public approveProvisioningStandInRequest() {
+		 super();
+	 }
 	 
 	 
 	public String getActionCode() {
@@ -37,12 +37,12 @@ public class approveProvisioningStandInRequest {
 	public void setStipReasonCode(String stipReasonCode) {
 		this.stipReasonCode = stipReasonCode;
 	}
-	public DateTimeSyntax getDateTimeOfEvent() {
-		return dateTimeOfEvent;
-	}
-	public void setDateTimeOfEvent(DateTimeSyntax dateTimeOfEvent) {
-		this.dateTimeOfEvent = dateTimeOfEvent;
-	}
+	//public DateTimeSyntax getDateTimeOfEvent() {
+		//return dateTimeOfEvent;
+	//}
+	//public void setDateTimeOfEvent(DateTimeSyntax dateTimeOfEvent) {
+		//this.dateTimeOfEvent = dateTimeOfEvent;
+	//}
 	public String getPanReferenceID() {
 		return panReferenceID;
 	}

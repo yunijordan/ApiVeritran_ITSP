@@ -16,7 +16,7 @@ public class deviceinformation {
 	private String deviceModel;
 	private String deviceLocation;
 	private Integer deviceIndex;
-	private String deviceIPAddressV4;
+	private String deviceIpAddressV4;
 	private String locationSource;
 	private String tokenProtectionMethod;
 	
@@ -51,14 +51,9 @@ public class deviceinformation {
 		this.deviceModel = deviceModel;
 		this.deviceLocation = deviceLocation;
 		this.deviceIndex = deviceIndex;
-		this.deviceIPAddressV4 = deviceIPAddressV4;
+		this.deviceIpAddressV4 = deviceIPAddressV4;
 		this.locationSource = locationSource;
 		this.tokenProtectionMethod = tokenProtectionMethod;
-	}
-	
-	public deviceinformation () {
-		super();
-		
 	}
 
 
@@ -202,13 +197,13 @@ public class deviceinformation {
 	}
 
 
-	public String getdeviceIPAddressV4() {
-		return deviceIPAddressV4;
+	public String getdeviceIpAddressV4() {
+		return deviceIpAddressV4;
 	}
 
 
-	public void setdeviceIPAddressV4(String deviceIPAddressV4) {
-		this.deviceIPAddressV4 = deviceIPAddressV4;
+	public void setdeviceIpAddressV4(String deviceIpAddressV4) {
+		this.deviceIpAddressV4 = deviceIpAddressV4;
 	}
 
 
